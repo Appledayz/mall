@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Index</title>
 </head>
 <body>
 	<c:if test="${loginMember != null}">
@@ -12,7 +12,7 @@
 		<a href="">로그아웃</a>
 	</c:if>
 	<c:if test="${loginMember == null }">
-	
+		<a>로그인</a>
 	</c:if>
 </body>
 </html>

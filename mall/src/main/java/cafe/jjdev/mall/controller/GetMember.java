@@ -7,25 +7,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import cafe.jjdev.mall.service.Member;
 import cafe.jjdev.mall.service.MemberDao;
 
-@WebServlet("/addMember")
-public class AddMember extends HttpServlet{
-	
+@WebServlet("GetMember")
+public class GetMember extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	MemberDao memberDao;
-	@Override
+	private MemberDao memberDao;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/jsp/addMember.jsp").forward(request, response);
+		HttpSession session = request.getSession();
+		if(session.getAttribute("loginMember") == null) {
+			//	redirect
+		}else {
+			Member member = memberDao.selectMember("");
+			request.setAttribute("member",  member);
+		}
 	}
-	
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Member member = new Member();
-		memberDao = new MemberDao();
-		int row = memberDao.insertMember(member);
-		response.sendRedirect(request.getContextPath()+"/WEB-INF/jsp/index.jsp");
-	}
+
 }

@@ -7,24 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/index")		
-public class indexController extends HttpServlet {
+@WebServlet("/ModifyMember")
+public class ModifyMember extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+    public ModifyMember() {
+        super();
+    }
+    //	수정 폼
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("indexController doGet");
-		//	1. router : @WebServlet("/index")
-		
-		//	2. model 호출 : DAO모델생성
-		String model="jjdev";
-		//	view rend...(template)
-		
-		//	3.	request.setAttribute("model", 2의 모델값);
-		request.setAttribute("model", model);
-		
-		//	WEB-INF/jsp/index.jsp forward	WEB-INF는 클라이언트는 읽을 수 없지만 포워드하면 가능하다
-		request.getRequestDispatcher("WEB-INF/jsp/index.jsp").forward(request, response);
-		
+		//	1. 로그인 확인
+		//	2. MemberDao.selectMember()
+		//	3. forward
 	}
+	//	수정 액션
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//	1. 로그인 확인
+		//	2. MemberDao.updateMember()
+		//	3. 로그아웃 redirect
 	}
+
 }

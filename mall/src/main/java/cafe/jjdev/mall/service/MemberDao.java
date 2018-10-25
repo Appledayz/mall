@@ -6,4 +6,8 @@ public class MemberDao {
 		return 0;
 	}
 
+	public Member selectMember(String string) {
+		return null;
+	}
+	
 }

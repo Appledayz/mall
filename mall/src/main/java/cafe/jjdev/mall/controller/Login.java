@@ -17,19 +17,18 @@ public class Login extends HttpServlet {
         super();
     }
     private MemberDao memberDao;
-    //	�α��� ��
+    // 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getSession().getAttribute("loginMember")==null) {
 			request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
 		}else {
-			System.out.println("�α��� ���Դϴ�...");
+			System.out.println("...");
 			response.sendRedirect("/index");
-
 		}
 	}
-	//	�α��� �׼�
+	//
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//	boolean MemberDao.login(Member) ȣ��
+		//	boolean MemberDao.login(Member)
 		boolean isLogin = false;
 		if(isLogin) {
 			HttpSession session = request.getSession();
