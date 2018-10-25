@@ -12,7 +12,7 @@
 		<a href="">로그아웃</a>
 	</c:if>
 	<c:if test="${loginMember == null }">
-		<a></a>
+	
 	</c:if>
 </body>
 </html>
