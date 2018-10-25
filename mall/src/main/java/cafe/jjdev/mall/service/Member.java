@@ -1,6 +1,6 @@
-package cafe.jjdev.mall.dto;
+package cafe.jjdev.mall.service;
 
-public class member {
+public class Member {
 	private int no;
 	private String id;
 	private String pw;

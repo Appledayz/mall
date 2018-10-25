@@ -1,4 +1,4 @@
-package cafe.jjdev.mall.dto;
+package cafe.jjdev.mall.service;
 
 public class memberItem {
 	private int no;

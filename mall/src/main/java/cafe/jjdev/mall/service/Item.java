@@ -1,6 +1,6 @@
-package cafe.jjdev.mall.dto;
+package cafe.jjdev.mall.service;
 
-public class item {
+public class Item {
 	private int no;
 	private String name;
 	private int price;
