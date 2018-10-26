@@ -19,6 +19,7 @@ public class GetItemList extends HttpServlet {
         super();
     }
     private ItemDao itemDao;
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int currentPage = 1;
 		if(request.getParameter("currentPage") != null)	currentPage = Integer.parseInt(request.getParameter("currentPage"));

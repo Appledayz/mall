@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import cafe.jjdev.mall.service.Member;
 import cafe.jjdev.mall.service.MemberDao;
 
-@WebServlet("GetMember")
+@WebServlet("/GetMember")
 public class GetMember extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private MemberDao memberDao;
