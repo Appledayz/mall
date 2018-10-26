@@ -6,6 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import cafe.jjdev.mall.service.MemberDao;
 
 @WebServlet("/ModifyMember")
 public class ModifyMember extends HttpServlet {
@@ -14,9 +17,18 @@ public class ModifyMember extends HttpServlet {
     public ModifyMember() {
         super();
     }
+    private MemberDao memberDao;
     //	수정 폼
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("ModifyMember doGet");
 		//	1. 로그인 확인
+		if(request.getSession().getAttribute("loginMember")==null) {
+			System.out.println("로그인 되어있지 않음");
+			response.sendRedirect(request.getContextPath()+"/login");
+		}else {
+			System.out.println("Login stat confirm");
+			memberDao.selectMember(string);
+		}
 		//	2. MemberDao.selectMember()
 		//	3. forward
 	}

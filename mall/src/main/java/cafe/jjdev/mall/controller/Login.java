@@ -17,16 +17,18 @@ public class Login extends HttpServlet {
         super();
     }
     private MemberDao memberDao;
-    // 
+    //	로그인 폼
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Login doGet");
 		if(request.getSession().getAttribute("loginMember")==null) {
-			request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			System.out.println("Login form forward");
+			request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 		}else {
 			System.out.println("...");
 			response.sendRedirect("/index");
 		}
 	}
-	//
+	//	로그인 액션
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//	boolean MemberDao.login(Member)
 		boolean isLogin = false;
